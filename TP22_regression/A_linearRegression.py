@@ -2,32 +2,37 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 import random
 
+random.seed(100)
 
 
-'''nb abscisse aléatoires'''
-nb=100
-x_data=[]
-for i in range(nb):
-    x_data.append(random.random())
 
-'''ordonnons les données (uniquement pour l'affichage à la fin)'''
-x_data.sort()
+def createData(nbData:int):
+    x_data=[]
+    for i in range(nbData):
+        x_data.append(random.random())
 
-y_data=[]
-'''ordonnées aléatoires'''
-for i in range(nb):
-    y_data.append(x_data[i]*0.1 +0.3 + random.gauss(0,0.01))
+    '''ordonnons les données (uniquement pour l'affichage à la fin)'''
+    x_data.sort()
 
+    y_data=[]
+    '''ordonnées aléatoires'''
+    for i in range(nbData):
+        y_data.append(x_data[i]*0.1 +0.3 + random.gauss(0,0.01))
 
+    return x_data,y_data
 
 
 """maintenant on oublie que l'on connaît les coefficients 0.1 et 0.3.
 on va les retrouver en minimisant une erreur quadratique"""
 
+
 '''W est pris aléatoire dans [-1,1], b est pris égal à 0
  W et b sont des variables, càd qu'ils vont changer de valeur au cours du programme'''
 W = tf.Variable(tf.random_uniform([1], -1.0, 1.0))
 b = tf.Variable(tf.zeros([1]))
+
+x_data,y_data=createData(100)
+
 
 '''Voici le modèle : y est une fonction affine de x_data'''
 y= W*x_data + b
@@ -46,7 +51,6 @@ train = optimizer.minimize(loss)
 
 """l'objet qui initialisera toutes les variables. A lancer en tout premier"""
 init = tf.initialize_all_variables()
-
 """la session de calcul"""
 sess = tf.Session()
 """cette session lance l'initialisation"""
