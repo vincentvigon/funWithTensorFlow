@@ -33,6 +33,11 @@ init = tf.initialize_all_variables()
 sess = tf.Session()
 sess.run(init)
 
+print('points',sess.run(points))
+
 print('assignments',sess.run(assignments))
 print('where',sess.run(where))
 print('oneFamily',sess.run(oneFamily))
+
+
+

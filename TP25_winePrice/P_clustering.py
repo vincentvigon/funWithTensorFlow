@@ -38,7 +38,7 @@ def step1():
 """===============================================================================================
 étape 2:
 On transforme l'étape 1 en une fonction.
-Maintenant  regroupe les points selon leur centroid choisi dans l'étape 1, cela forme des clusters,
+Ensuite, on  regroupe les points selon leur centroid choisi dans l'étape 1, cela forme des clusters,
 pour chaque cluster on calcul sa moyenne.
 """
 
@@ -83,6 +83,9 @@ def step2():
 
 
     return
+""" Remarque: les opération que nous avons fait dans le step2 se ferait plus naturellement sans employer
+le langage tensoriel, mais uniquement avec des boucles et des if. Cependant l'idée est de ne jamais sortir de tensorFlow
+ (à part pour l'importation des données, et pour l'affichage final), car tensorFlow sait très bien optimiser les calculs"""
 
 
 
@@ -104,6 +107,7 @@ def improveCentroid(points, centroids,nbCluster:int):
 
     assignments=findClosestCentroid(points, centroids)
 
+    """ """
     means=[] #type:List[float]
     for c in range(nbCluster):
         equalC = tf.equal(assignments, c)
@@ -143,6 +147,6 @@ def testFinal():
     return
 
 
-
-testFinal()
+#step1()
 #step2()
+testFinal()

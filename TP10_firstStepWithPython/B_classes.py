@@ -1,5 +1,17 @@
 import re
 
+
+""" Les objets servent à structurer les programmes.
+    Ils peuvent servir de conteneur à données => objet de type "Modèle"
+    Ils peuvent servir à rassembler des méthode (=fonctions) qui ont un but commun => objet de type "Controler"
+    Ils peuvent servir à manipuler des entrées sortie => objet de type View
+
+  Si votre but est d'utiliser python uniquement pour lancer des petits scripts utilisant des bibliothèques tierce (ex. tensorflow)
+   vous ne créerez peut-être pas d'objet vous même.
+    Mais vous serez obligé de faire appelle aux objets créer par les bibliothèques tierces.
+     Donc autant savoir comme cela marche"""
+
+
 class Man:
 
 

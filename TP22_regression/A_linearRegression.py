@@ -35,7 +35,8 @@ x_data,y_data=createData(100)
 
 
 '''Voici le modèle : y est une fonction affine de x_data'''
-y= W*x_data + b
+""" y_i= W x_data_i + b  """
+y= tf.mul(W,x_data) + b
 
 
 '''on définit la fonction de coup'''
@@ -64,7 +65,6 @@ for step in range(201):
 
 
 plt.plot(x_data,y_data,'ro')
-''' ne pas oublié "sess.run" pour avoir les valeurs de y '''
 plt.plot(x_data,sess.run(y))
 plt.show()
 

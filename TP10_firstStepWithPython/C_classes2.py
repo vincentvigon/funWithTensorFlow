@@ -1,7 +1,10 @@
 
 from typing import List
 
-""" Une classe avec une méthode récursive  """
+""" à lire à la MAISON de manière facultative. :
+    C'est une classe avec une méthode récursive : Une classe dont les objets manipule d'autres objet de même type (=de la même classe)
+    Ce type d'objet est très utiliser pour représenter des graphes.
+   """
 
 class Animal:
     def __init__(self,name:str):

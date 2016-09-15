@@ -1,5 +1,5 @@
 
-from TP1_firstStepWithPython.X_correction import *
+from TP10_firstStepWithPython.X_correction import *
 from AAA_common.helper import *
 
 point1=Point(0, 0.0001)
